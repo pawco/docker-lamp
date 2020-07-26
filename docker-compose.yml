@@ -22,4 +22,4 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     volumes:
-      - ./mysql/datadump.sql:/apache-entrypoint-initdb.d/datadump.sql
+      - ./mysql/data:/var/lib/mysql

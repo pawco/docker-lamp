@@ -1,2 +1,3 @@
 /source/*
 !/source/index.php
+/mysql/data/*
