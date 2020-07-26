@@ -3,9 +3,9 @@
 Basic lamp setup built with Docker Compose
 
 It consists of following services (more to come soon):
-- apache
-- php
-- mysql
+- apache (2.4.33)
+- php (7.3-fpm)
+- mysql (5.7)
 
 ##Requirements
 - git (only to be able to clone the repo)
