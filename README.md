@@ -31,13 +31,21 @@ In order to bind custom domain to your localhost, edit your `/etc/hosts` file an
 
 
 ## Fun Facts
-- document root is `./source` folder
-- MySQL root password is `toor`
-- MySQL database is `docker`
-- default port is 8080
+- default document root is `./source` folder
+- default MySQL root password is `toor`
+- default MySQL database is `docker`
+- default http port is 80
 - if you change `composer.json` and you need to install/update packages, you have to run `composer update` manually: `docker-compose run --rm composer composer update`
+- in order to create database dump from mysql container run following: 
+```shell script
+docker exec mysql sh -c 'exec mysqldump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"' > /some/path/on/your/host/all-databases.sql
+```
+- in order ro restore database dump into mysql container run following: 
+```shell script
+docker exec -i mysql sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < /some/path/on/your/host/all-databases.sql
+```
 
-MySQL root password and database, default port for http and document root path are configurable in .env file
+All default values mentioned above are configurable in .env file
 
 ## ToDo (in this order)
 - add support for node
