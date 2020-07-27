@@ -23,3 +23,11 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
     volumes:
       - ./mysql/data:/var/lib/mysql
+  composer:
+    image: composer:latest
+    container_name: composer
+    volumes:
+      - ${DOC_ROOT}:/var/www/html/
+    working_dir: /var/www/html
+    depends_on:
+      - php
